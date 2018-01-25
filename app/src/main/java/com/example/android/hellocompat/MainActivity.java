@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mHellotextView;
+    private TextView mHelloTextView;
     private String[] mColorArray = {"red", "pink", "purple", "deep_purple",
             "indigo", "blue", "light_blue", "cyan", "teal", "green",
             "light_green", "lime", "yellow", "amber", "orange", "deep_orange",
@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mHellotextView = findViewById(R.id.hello_textview);
+        mHelloTextView = findViewById(R.id.hello_textview);
 
         if (savedInstanceState != null) {
-            mHellotextView.setTextColor(savedInstanceState.getInt("color"));
+            mHelloTextView.setTextColor(savedInstanceState.getInt("color"));
         }
     }
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putInt("color", mHellotextView.getCurrentTextColor());
+        outState.putInt("color", mHelloTextView.getCurrentTextColor());
     }
 
     public void changeColor(View view) {
@@ -47,6 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         int colorRes = ContextCompat.getColor(this, colorResourceName);
 
-        mHellotextView.setTextColor(colorRes);
+        mHelloTextView.setTextColor(colorRes);
     }
 }
